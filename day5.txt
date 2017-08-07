@@ -1,0 +1,23 @@
+
+
+
+//asyncronous
+let myPromise = new Promise(function(resolve, reject){
+  // do something asyncronously
+  // if success
+    // resolve the promise
+  // if failure
+    // reject the promise
+})
+
+API
+Application Program Interface
+A program can call another Program
+a Wordpress plugin can call Twitter
+a Facebook app calls Twitter w it's own APD
+
+Resource
+https://medium.freecodecamp.org/what-is-an-api-in-english-please-b880a3214a82
+
+AJAX
+https://www.w3schools.com/xml/ajax_intro.asp
