@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon|Rock+Salt');
+body {
+  background: url("drop.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: #fff;
+  position: relative;
+}
+
+
+ul {
+  color: #fff;
+  list-style: none;
+}
+
+li {
+  color: #fff;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding-top: 25px;
+  position: relative;
+}
+
+section,
+div {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 25px;
+  font-family: 'Rock Salt', cursive;
+  font-weight: bold;
+}
+
+.img-one {
+  border-radius: 50%;
+  display: inline-block;
+  float: right;
+  width: 20%;
+}
+
+.img-two {
+  border-radius: 50%;
+  display: inline-block;
+  float: right;
+  width: 20%;
+}
+
+.img-one, .img-two {
+  margin-right: 30px;
+}
+.blurb {
+  background-color: rgba(214, 194, 194, 0.5);
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Coming Soon', cursive;
+  font-weight: normal;
+  line-height: 1.5;
+  padding: 10px 10px;
+  width: 65%;
+}
+
+.blurb2 {
+  /*background-color: green;*/
+  font-size: 16px;
+  font-family: 'Rock Salt', cursive;
+  font-weight: normal;
+  line-height: 1.5;
+  padding: 10px 10px 0 0;
+
+}
+.clearfix {
+  clear: both;
+}
+
+footer {
+  text-align: center;
+}
