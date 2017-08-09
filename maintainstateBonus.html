@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1 id='greeting'></h1>
+<img id="image1" width="100px" height="100px" />
+    <!-- <img src=e.image[0]> -->
+
+    <button onclick="greetNext()" id="nextButton"></button>
+    <script>
+
+
+      var currentState = {
+        availableGreetings:[
+          {name:"Bob", image: "bob.jpg"},
+          {name: "Mary", image: "mary.jpg"},
+          {name:"Carson", image: "carson.jpg"}
+        ],
+        greetingIndex:0,
+      }
+      var e = currentState.availableGreetings[0]
+    console.log(e.image);
+    console.log(e.name);
+
+
+
+      var element = document.getElementById('greeting');
+      element.innerHTML = "Hello " +currentState.availableGreetings[currentState.greetingIndex].name;
+
+      var nextState = 1;
+      var buttonText = document.getElementById("nextButton");
+      buttonText.innerHTML = "Next greet " +currentState.availableGreetings[nextState].name;
+
+      var imageElement = document.getElementById('image1');
+      imageElement.innerHTML = currentState.availableGreetings[currentState.greetingIndex].image;
+
+
+
+      function greetNext(){
+        currentState.greetingIndex += 1;
+
+        if(currentState.greetingIndex == currentState.availableGreetings.length){
+          currentState.greetingIndex = 0;
+        }
+        nextState = currentState.greetingIndex + 1;
+        if(nextState == currentState.availableGreetings.length){
+          nextState = 0;
+        }
+
+        var element = document.getElementById('greeting');
+        element.innerHTML = "Hello " +currentState.availableGreetings[currentState.greetingIndex].name;
+
+        var imageElement = document.getElementById('image1');
+        imageElement.innerHTML = currentState.availableGreetings[currentState.greetingIndex].image;
+
+        var buttonText = document.getElementById("nextButton");
+        buttonText.innerHTML = "Next greet "
+        +currentState.availableGreetings[nextState].name;
+
+        console.log(nextState);
+        //set next name inside button
+      }
+    </script>
+  </body>
+</html>

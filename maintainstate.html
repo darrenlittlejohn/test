@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1 id='greeting'></h1>
+    <button onclick="greetNext()" id="nextButton"></button>
+    <script>
+
+      var currentState = {
+        availableGreetings: ["Bob", "Mary", "Carson"],
+
+        greetingIndex: 0,
+      }
+
+
+      var element = document.getElementById('greeting');
+      element.innerHTML = "Hello " +currentState.availableGreetings[currentState.greetingIndex];
+
+      var nextState = 1;
+      var buttonText = document.getElementById("nextButton");
+      buttonText.innerHTML = "Next greet " +currentState.availableGreetings[nextState];
+
+
+
+      function greetNext(){
+        currentState.greetingIndex += 1;
+
+        if(currentState.greetingIndex == currentState.availableGreetings.length){
+          currentState.greetingIndex = 0;
+        }
+        nextState = currentState.greetingIndex + 1;
+        if(nextState == currentState.availableGreetings.length){
+          nextState = 0;
+        }
+
+        var element = document.getElementById('greeting');
+        element.innerHTML = "Hello " +currentState.availableGreetings[currentState.greetingIndex];
+
+        var buttonText = document.getElementById("nextButton");
+        buttonText.innerHTML = "Next greet "
+        +currentState.availableGreetings[nextState];
+
+        console.log(nextState);
+        //set next name inside button
+      }
+    </script>
+  </body>
+</html>
