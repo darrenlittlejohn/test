@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script type='text/javascript' src='racecar.js'></script>
+  </head>
+
+  <body>
+    <script>
+      class Engine{
+        constructor(){
+          this.horsepower = 350
+          this.oilLevel = 100
+          this.rpm = 0
+        }
+
+        start(){
+          this.rpm = 500
+        }
+
+        stop(){
+          this.rpm = 0
+        }
+
+        accelerate(){
+          if(this.rpm != 0){
+            this.rpm += 500
+          }
+        }
+
+        decelerate(){
+          if(this.rpm != 0){
+            this.rpm -= 500
+          }
+        }
+      }
+    </script>
+
+  </body>
+</html>

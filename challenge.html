@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+  class Car {
+     constructor() {
+       this.make = 'Honda';
+       this.year = '2018';
+       this.model = 'Fit';
+       this.wheels = 4;
+       this.lights = "off";
+       this.speed = 0;
+     }
+}
+
+  class Tesla extends Car {
+
+    constructor(){
+          super()
+          this.model = "Model X"
+        }
+        lights(){
+            if(this.lights != "off"){
+              this.lights = "on"
+            }
+            }
+          accelerate(){
+            this.speed += 10
+          }
+
+          decelerate(){
+              if(this.speed != 0){
+                this.speed -= 7
+              }
+            }
+    //     decelerate(){
+    //       this.speed -= 7
+    // }
+
+  }
+
+  class Tata extends Car {
+    constructor(){
+          super()
+          this.model = "Modal Teeta"
+        }
+        accelerate(){
+          this.speed += 2
+        }
+
+        decelerate(){
+            if(this.speed != 0){
+              this.speed -= 1.25
+            }
+          }
+
+  }
+
+  class Toyota extends Car {
+    constructor(){
+          super()
+          this.model = "Camry"
+        }
+  }
+
+  let myCar = new Car()
+  let myTesla = new Tesla()
+  let myTata = new Tata()
+  let myToyota = new Toyota()
+
+  console.log(myCar)
+  console.log(myTesla)
+  console.log(myTata)
+  console.log(myToyota)
+  console.log(myTesla.speed)
+  myTesla.accelerate()
+  console.log(myTesla.speed)
+  myTesla.decelerate()
+  console.log(myTesla.speed)
+  myTata.accelerate()
+  console.log(myTata.speed)
+  myTata.decelerate()
+  console.log(myTata.speed)
+
+
+</script>
+
+  </body>
+</html>
