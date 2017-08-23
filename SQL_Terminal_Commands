@@ -1,0 +1,18 @@
+CREATE TABLE persons (
+id serial PRIMARY KEY, 
+given_name varchar, 
+family_name varchar, 
+address varchar(200), 
+age int, 
+dob timestamp, 
+email varchar(320)
+);
+
+
+INSERT INTO persons (given_name, family_name, address, age, dob, email)
+VALUES ('Darren', 'Littlejohn', '3036 Hawthorn, #4, San Diego, CA, 92104', 37, '1962-06-02','darrenblittlejohn@gmail.com');
+VALUES ('Lou, 'Stepanek', 'Alsip, ILL', 42, '','loustepanek@gmail.com');
+VALUES ('Cheryl', 'Arnold', 'Blue Island, ILL, 95125', 67, '','cheryl@gmail.com');
+VALUES ('Pam', 'Stepanek', 'Alsip, ILL, 95125', 57, '','pam@gmail.com');
+VALUES ('Kristen', 'Stepanek', 'Alsip, ILL, 95125', 27, '','kristen@gmail.com');
+

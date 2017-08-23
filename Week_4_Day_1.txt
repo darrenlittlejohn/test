@@ -1,0 +1,119 @@
+SELECT population FROM country WHERE code = 'USA'
+
+SELECT surfacearea
+FROM country
+WHERE code = 'USA'
+
+SELECT continent, name, population, lifeexpectancy
+FROM country
+WHERE continent = 'Africa' 
+AND population < 3e+7 
+AND lifeexpectancy > 45
+
+SELECT name, governmentform
+FROM country
+WHERE governmentform LIKE '%Republic'
+
+SELECT name, governmentform, indepyear
+FROM country
+WHERE governmentform LIKE '%Republic'
+AND indepyear > 1945
+
+SELECT name, governmentform, indepyear
+FROM country
+WHERE governmentform NOT LIKE '%Republic'
+AND indepyear > 1945
+
+SELECT name, lifeexpectancy
+FROM country
+ORDER BY lifeexpectancy ASC
+LIMIT 15
+
+SELECT name, 
+round(country.population/country.surfacearea*1000)/1000 AS pop_density
+FROM country
+WHERE population > 0
+ORDER BY pop_density ASC
+LIMIT 5
+
+SELECT name, population, surfacearea
+FROM country
+WHERE population > 0
+ORDER BY population ASC
+LIMIT 10
+
+WITH subset AS(
+SELECT name, population, surfacearea, gnp
+FROM country
+WHERE population > 0
+ORDER BY surfacearea ASC
+LIMIT 10)
+SELECT *
+FROM subset
+ORDER BY gnp DESC
+
+WITH subset AS(
+SELECT name, population, surfacearea, gnp, 
+    gnp/population AS gnp_per_cap
+FROM country
+WHERE population > 0
+ORDER BY surfacearea ASC
+LIMIT 10)
+SELECT *
+FROM subset
+ORDER BY gnp_per_cap DESC
+
+WITH subset AS (
+SELECT name, population, surfacearea, gnp
+FROM country
+WHERE population > 0
+ORDER BY surfacearea DESC
+LIMIT 10)
+SELECT *
+FROM subset
+ORDER BY gnp DESC
+
+WITH subset AS (
+SELECT name, population, surfacearea, gnp, 
+    gnp/population AS gnp_per_cap
+FROM country
+WHERE population > 0
+ORDER BY surfacearea DESC
+LIMIT 10)
+SELECT *
+FROM subset
+ORDER BY gnp_per_cap DESC
+
+WITH subset AS (
+SELECT name, population, surfacearea, gnp
+FROM country
+WHERE population > 0
+ORDER BY surfacearea DESC
+LIMIT 10)
+SELECT SUM(surfacearea)
+FROM subset
+
+SELECT SUM(population) AS africa_pop
+FROM country
+WHERE continent = 'Africa'
+
+SELECT continent, SUM(population), SUM(surfacearea)
+FROM country
+GROUP BY continent
+
+SELECT region, AVG(gnp)
+FROM country
+GROUP BY region
+ORDER BY avg DESC
+
+SELECT name, headofstate, round(((gnp-gnpold)/gnpold)*100) AS ptc_gnp
+FROM country
+WHERE gnpold IS NOT NULL
+ORDER BY headofstate DESC
+
+SELECT headofstate, 
+AVG(round(((gnp-gnpold)/gnpold)*100)) AS ptc_gnp
+FROM country
+WHERE gnpold IS NOT NULL
+GROUP BY headofstate
+ORDER BY ptc_gnp DESC
